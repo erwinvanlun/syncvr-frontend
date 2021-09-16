@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {SvControlOptions} from "@lib/forms/controls/control-options.interface";
 import {FibonacciService} from "@fibonacci/fibonacci.service";
-import {Observable, Subscription} from "rxjs";
+import { Subscription} from "rxjs";
 import {APIFibonacciNumberMeta} from "syncvr";
 
 @Component({
@@ -33,7 +33,8 @@ export class FibonacciComponent implements OnInit, OnDestroy {
       .subscribe(
         (h) => {
           console.log('history is binnen!');
-          this.history = h.history;
+          console.log(h);
+          this.history = h;
         },
         error => {
           this.error = error;

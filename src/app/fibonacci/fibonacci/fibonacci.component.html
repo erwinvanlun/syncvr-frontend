@@ -21,27 +21,27 @@
 
     <ng-container matColumnDef="requestId">
       <th mat-header-cell *matHeaderCellDef>{{'fibonacci.requestId' | translate }}</th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.requestId}} </td>
     </ng-container>
 
     <ng-container matColumnDef="timestamp">
       <th mat-header-cell *matHeaderCellDef>{{'fibonacci.time' | translate }}</th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.timestamp}} </td>
     </ng-container>
 
     <ng-container matColumnDef="ipAddress">
       <th mat-header-cell *matHeaderCellDef>{{'fibonacci.ipAddress' | translate }}</th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.ipAddress}} </td>
     </ng-container>
 
     <ng-container matColumnDef="number">
       <th mat-header-cell *matHeaderCellDef>{{'fibonacci.number' | translate }}</th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.number}} </td>
     </ng-container>
 
     <ng-container matColumnDef="fibonacci">
-      <th mat-header-cell *matHeaderCellDef>Ffibonacci</th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+      <th mat-header-cell *matHeaderCellDef>Fibonacci</th>
+      <td mat-cell *matCellDef="let element"> {{element.fibonacci}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
