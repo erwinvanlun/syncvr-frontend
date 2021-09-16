@@ -20,9 +20,11 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "@ngx-translate/core": "^13.0.0",
+    "@ngx-translate/http-loader": "^6.0.0",
     "http-status-codes": "^2.1.4",
     "rxjs": "~6.6.0",
-    "syncvr": "^1.0.6",
+    "syncvr": "^1.0.9",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

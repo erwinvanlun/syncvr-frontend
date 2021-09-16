@@ -19,7 +19,21 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@root/*": [
+        "src/app/root/*"
+      ],
+      "@fibonacci/*": [
+        "src/app/fibonacci/*"
+      ],
+      "@lib/*": [
+        "src/app/lib/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

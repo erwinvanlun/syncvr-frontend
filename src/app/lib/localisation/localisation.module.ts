@@ -5,11 +5,6 @@ import { LocalisationConfigService } from './localisation-config.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { HttpClientModule } from '@angular/common/http';
 
-export enum LocalisationLanguages {
-  Dutch = 'nl',
-  English = 'us-en'
-}
-
 @NgModule({
   declarations: [],
   imports: [CommonModule, HttpClientModule, TranslateModule.forChild()],
@@ -27,7 +22,7 @@ export class LocalisationModule {
           multi: true
         },
         LocalisationService,
-        { provide: LOCALE_ID, useValue: config.locale_id }, // using the initial value
+        { provide: LOCALE_ID, useValue: config.locale_id },
         { provide: LocalisationConfigService, useValue: config }
       ]
     };

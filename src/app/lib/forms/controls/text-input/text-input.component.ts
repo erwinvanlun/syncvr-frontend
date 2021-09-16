@@ -30,6 +30,7 @@ export class TextInputComponent  implements OnInit {
         this.options.value ? {value:  this.options.value, disabled: false} : null
       )
     );
+    this.control = this.formGroupObj.controls[this.options.name] as FormControl;
   }
 
 

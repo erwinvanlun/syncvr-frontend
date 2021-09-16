@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ErrorCodes} from "syncvr";
-import { FormControl, FormGroup, Validators} from "@angular/forms";
+import {LangChangeEvent, TranslateService} from "@ngx-translate/core";
+import {Title as TitleService} from "@angular/platform-browser";
+import {LocalisationService} from "@lib/localisation/localisation.service";
+import {LocalisationLanguages} from "@lib/localisation/localisation-language.enum";
 
 @Component({
   selector: 'sv-root',
@@ -8,44 +10,23 @@ import { FormControl, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./root.component.scss']
 })
 export class RootComponent implements OnInit{
-  title = 'Sync VR Fibonacci';
-
-  fibonacciForm = new FormGroup({
-    fibonacciInput: new FormControl({value:'' , disabled: false}, [
-      Validators.required,
-      Validators.min(0),
-      Validators.pattern(/^-?(0|[1-9]\d*)?$/)
-    ])});
+  constructor(private localisationService: LocalisationService,
+              private translateService: TranslateService,
+              private titleService: TitleService) {
+  }
 
   ngOnInit() {
-    console.log(ErrorCodes.FibonacciNonInteger);
+    this.titleService.setTitle(this.translateService.instant('root.title'));
+    this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.titleService.setTitle(this.translateService.instant('root.title'));
+    });
   }
 
-  handleSubmit() {
-    const values = this.fibonacciForm.value;
-    console.log('values:');
-    console.log(values);
-    console.log(typeof values);
-
-    // const signUpData: ApiSignup =
-    //   {
-    //     firstName: values.firstName,
-    //     lastName: values.lastName,
-    //     email: values.email
-    //   };
-    //
-    // this.fibonacciService.signUp$(signUpData).subscribe(
-    //   () => {
-    //     this.routerService.navigate(['auth/signup/success']);
-    //   },
-    //   error => {
-    //     console.log('foute boel');
-    //     console.log(error);
-    //   }
-    // );
-  }
-
-  cancel() {
-    this.fibonacciForm.reset();
+  toggleLanguage () {
+    if (this.localisationService.localeId === LocalisationLanguages.Dutch) {
+      this.localisationService.useLanguage(LocalisationLanguages.English).then(r => {});
+    } else {
+      this.localisationService.useLanguage(LocalisationLanguages.Dutch).then(r => {});;
+    }
   }
 }

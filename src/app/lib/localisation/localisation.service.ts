@@ -1,11 +1,12 @@
 import { Injectable, Optional, SkipSelf } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalisationConfigService } from './localisation-config.service';
+import {LocalisationLanguages} from "@lib/localisation/localisation-language.enum";
 
 
 @Injectable()
 export class LocalisationService {
-  private _localeId: string = 'us-en';
+  private _localeId: string = LocalisationLanguages.English;
 
   constructor(
     @Optional() @SkipSelf() private singleton: LocalisationService,
@@ -24,13 +25,18 @@ export class LocalisationService {
     return this._localeId;
   }
 
+  public set localeId (id: string) {
+    this._localeId = id;
+  }
+
   public initService(): Promise<void> {
-    this._localeId = localStorage.getItem('language') || 'us-en';
+    this._localeId = localStorage.getItem('language') || LocalisationLanguages.English;
     return this.useLanguage(this._localeId);
   }
 
   public useLanguage(lang: string): Promise<void> {
     this.translateService.setDefaultLang(lang);
+    this.localeId = lang;
     return this.translateService
       .use(lang)
       .toPromise()

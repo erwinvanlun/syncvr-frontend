@@ -1,33 +1,14 @@
 <div class="container">
   <header>
-    <h1>{{'fibonacci.title'| translate}}</h1>
+    <h1>{{'root.title'| translate}}</h1>
   </header>
-  <section class="get-number">
-    <h2>{{'fibonacci.number'| translate}}</h2>
-    <form (submit)="handleSubmit()">
-      <sv-text-input
-        [formGroupObj]="fibonacciForm"
-      >
-      </sv-text-input>
-      <div class="action-buttons">
-        <button class="submit">
-          <span >{{'fibonacci.getNumber'| translate}}</span>
-        </button>
-      </div>
-    </form>
-  </section>
-  <section class="history">
-    <h2>{{'fibonacci.history'| translate}}</h2>
-    <div >
-      <button >{{'fibonacci.more'| translate}}</button>
-    </div>
-    history here...
-  </section>
+
+  <router-outlet></router-outlet>
+
   <footer>
-    {{'fibonacci.more'| translate}}
-    {{'general.madeBy' | translate}} {{'general.author' | translate}}
-    {{'general.for' | translate}} {{'general.companyName' | translate}}
-    <button >{{'fibonacci.getNumber'| translate}}</button>
+    {{'root.madeBy' | translate}} {{'root.author' | translate}}
+    {{'root.for' | translate}} {{'root.companyName' | translate}}
+    <p (click)="toggleLanguage()">{{'root.for' | translate}} </p>
   </footer>
 
 

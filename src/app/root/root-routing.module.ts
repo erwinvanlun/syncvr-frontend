@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WelcomeComponent } from './components/welcome/welcome.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import {FibonacciComponent} from "@fibonacci/fibonacci/fibonacci.component";
+
+//
+//  { path: 'fibonacci', loadChildren:  () => import('@fibonacci/fibonacci.module').then(m => m.FibonacciModule)},
 
 const routes: Routes = [
-  { path: 'auth', loadChildren:  () => import('@auth/auth.module').then(m => m.FxgAuthModule)},
-  { path: 'welcome', component: WelcomeComponent},
-  { path: '',   redirectTo: '/auth/signup', pathMatch: 'full' },
-  { path: '**', component: PageNotFoundComponent },
+  { path: 'fibonacci', component: FibonacciComponent },
+{ path: '',   redirectTo: '/fibonacci', pathMatch: 'full' },
 ];
 
 @NgModule({

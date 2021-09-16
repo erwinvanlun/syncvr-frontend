@@ -1,10 +1,7 @@
-export interface FxgEnvironment {
+export interface SvFEEnvironment {
   production: boolean;
   defaultLanguage: string;
   availableLanguages: string[];
-  endpoints: {
-    auth: {
-      signUp: string;
-    }
-  };
+  fibonacciApi: string;
 }
+

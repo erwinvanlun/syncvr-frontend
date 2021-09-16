@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SignupComponent } from './components/signup/signup.component';
-import { SignupSuccessComponent } from '@auth/components/signup-success/signup-success.component';
+import {FibonacciComponent} from "@fibonacci/fibonacci/fibonacci.component";
 
-const authRoutes: Routes = [
-  { path: 'signup', component: SignupComponent },
-  { path: 'signup/success', component: SignupSuccessComponent },
+const fibonacciRoutes: Routes = [
+  { path: '*', component: FibonacciComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(authRoutes)],
+  imports: [RouterModule.forChild(fibonacciRoutes)],
   exports: [RouterModule]
 })
-export class AuthRoutingModule { }
+export class FibonacciRoutingModule { }
+

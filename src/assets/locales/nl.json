@@ -1,6 +1,36 @@
 {
-  "general": {
+  "root": {
+    "title": "Demo voor SyncVR",
     "companyName" : "Sync VR",
-    "applicationName": "Fibonacci Generator"
+    "applicationName": "Fibonacci Generator",
+    "author": "Erwin van Lun",
+    "madeBy": "gemaakt door",
+    "for": "voor"
+  },
+
+  "fibonacci": {
+    "title": "De Magische Fibonnaci Nummer Generator",
+    "number": "nummer",
+    "getNumber": "verzoek nu",
+    "result": "resultaat",
+    "history": "Eerdere verzoeken",
+    "time": "tijdstip",
+    "requestId": "#",
+    "ipAddress": "ip-adres",
+    "older": "ouder"
+  },
+
+  "languages": {
+    "Dutch": {
+      "full": "Nederlands",
+      "short": "NL",
+      "locale": "nl"
+    },
+    "English": {
+      "full": "English",
+      "short": "EN",
+      "locale": "us-en"
+    }
   }
 }
+

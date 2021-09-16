@@ -1,12 +1,11 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  border: 1px solid red;
+  align-items: center;
 
-  section {
-    border: 6px solid black;
-    width: 50em;
-    margin-bottom: 50px;
-  }
+  header, footer {
+    background: red;
+    width: 100%;
+    padding: .5em;
+  };
 }

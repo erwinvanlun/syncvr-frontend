@@ -7,8 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import {TextInputComponent} from "./forms/controls/text-input/text-input";
-
+import {TextInputComponent} from "./forms/controls/text-input/text-input.component";
 
 @NgModule({
   declarations: [
@@ -26,7 +25,7 @@ import {TextInputComponent} from "./forms/controls/text-input/text-input";
     RouterModule
   ],
   exports: [
-    TextInputComponent,
+    TextInputComponent
   ]
 
 })
