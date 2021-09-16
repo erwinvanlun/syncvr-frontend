@@ -1,0 +1,14 @@
+<mat-form-field appearance="outline">
+  <mat-label *ngIf="options.label">{{ options.label | translate }}</mat-label>
+  <input
+    [id]="options.name"
+    [formControl]="control"
+    matInput
+    [readonly]="readonly"
+    [attr.data-cy]="options.dataCy"
+>
+  <mat-hint >
+  </mat-hint>
+  <mat-error *ngIf="control.invalid">
+  </mat-error>
+</mat-form-field>
