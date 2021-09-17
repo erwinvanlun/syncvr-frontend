@@ -8,10 +8,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import {TextInputComponent} from "./forms/controls/text-input/text-input.component";
+import {RelativeTimeFilterPipe} from "@lib/pipes/pipes";
 
 @NgModule({
   declarations: [
-    TextInputComponent
+    TextInputComponent,
+    RelativeTimeFilterPipe
   ],
   imports: [
     MatFormFieldModule,
@@ -25,7 +27,8 @@ import {TextInputComponent} from "./forms/controls/text-input/text-input.compone
     RouterModule
   ],
   exports: [
-    TextInputComponent
+    TextInputComponent,
+    RelativeTimeFilterPipe
   ]
 
 })

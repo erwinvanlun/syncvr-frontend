@@ -26,7 +26,7 @@
 
     <ng-container matColumnDef="timestamp">
       <th mat-header-cell *matHeaderCellDef>{{'fibonacci.time' | translate }}</th>
-      <td mat-cell *matCellDef="let element"> {{element.timestamp}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.timestamp | relativeTime }} </td>
     </ng-container>
 
     <ng-container matColumnDef="ipAddress">
