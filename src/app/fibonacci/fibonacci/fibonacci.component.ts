@@ -43,6 +43,7 @@ export class FibonacciComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.historySubcription.unsubscribe();
+    this.fibonacciService.stopPolling(); // not sure whether this is truely necessary.
   }
 
   fibonacciForm = new FormGroup({
