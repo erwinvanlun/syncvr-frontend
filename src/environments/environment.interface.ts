@@ -3,5 +3,6 @@ export interface SvFEEnvironment {
   defaultLanguage: string;
   availableLanguages: string[];
   fibonacciApi: string;
+  historyRefreshInSeconds: number;
 }
 

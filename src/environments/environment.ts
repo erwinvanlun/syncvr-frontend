@@ -9,5 +9,6 @@ export const environment: SvFEEnvironment = {
   production: false,
   defaultLanguage: LocalisationLanguages.English,
   availableLanguages: [LocalisationLanguages.English, LocalisationLanguages.Dutch],
-  fibonacciApi: "http://localhost:3000/fibonacci"
+  fibonacciApi: "http://localhost:3000/fibonacci",
+  historyRefreshInSeconds: 1
 };
