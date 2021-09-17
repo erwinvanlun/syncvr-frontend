@@ -32,8 +32,6 @@ export class FibonacciComponent implements OnInit, OnDestroy {
       .subscribe(
         (h) => {
           this.history = h;
-          console.log('history in component!');
-          console.log(h);
         },
         error => {
           this.error = error;

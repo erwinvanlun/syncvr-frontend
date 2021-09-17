@@ -7,7 +7,6 @@ import{PipeTransform,Pipe} from '@angular/core';
 export class RelativeTimeFilterPipe implements PipeTransform{
 
   transform(inputDate:string):string{
-    console.log(inputDate);
     let current = new Date().valueOf();
     let input = new Date(inputDate).valueOf();
     let msPerMinute = 60 * 1000;
