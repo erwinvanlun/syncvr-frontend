@@ -3,7 +3,13 @@ import {Observable} from "rxjs";
 import {HttpService} from "@lib/http/http.service";
 import {environment} from "../../environments/environment";
 import {map, tap} from "rxjs/operators";
-import {APIFibonacciHistoryResponse, APIFibonacciNumberMeta, APIFibonacciNumberRequestResponse} from "syncvr";
+// @ts-ignore: todo to check: typescript says that APIFibonacci is not exported but actually it is
+import {
+  APIFibonacci,
+  APIFibonacciHistoryResponse,
+  APIFibonacciNumberMeta,
+  APIFibonacciNumberRequestResponse
+} from "syncvr";
 
 @Injectable({
   providedIn: 'root', // moet dit echt?
@@ -23,7 +29,7 @@ export class FibonacciService {
   }
 
   public getHistory$(): Observable<APIFibonacciNumberMeta[]> {
-    const url = environment.fibonacciApi + '/history'; // todo endpoint urls to be centralised in api
+    const url = environment.fibonacciApi + '/' + APIFibonacci.history;
     return (this.httpService.get$(url)
       .pipe(
         tap((x) => {console.log(x); console.log('logged')}),
