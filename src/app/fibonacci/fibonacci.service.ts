@@ -1,8 +1,8 @@
 import {Injectable} from "@angular/core";
-import {Observable} from "rxjs";
+import {interval, Observable, Subject, timer} from "rxjs";
 import {HttpService} from "@lib/http/http.service";
 import {environment} from "../../environments/environment";
-import {map, tap} from "rxjs/operators";
+import {map, retry, share, switchMap, takeUntil, tap} from "rxjs/operators";
 // @ts-ignore: todo to check: typescript says that APIFibonacci is not exported but actually it is
 import {
   APIFibonacci,
@@ -19,6 +19,10 @@ export class FibonacciService {
   oldest = 0;
   newest = 0;
 
+  private _polling = new Subject();
+  public stopPolling() {
+    this._polling.next();
+  }
   constructor(private httpService: HttpService) {
   }
 
@@ -30,19 +34,16 @@ export class FibonacciService {
 
   public getHistory$(): Observable<APIFibonacciNumberMeta[]> {
     const url = environment.fibonacciApi + '/' + APIFibonacci.history;
-    return (this.httpService.get$(url)
+    return timer(1, 3000).pipe(
+      switchMap(() =>
+      this.httpService.get$(url) // todo: we actually need to check whether previous get is finished
       .pipe(
-        tap((x) => {console.log(x); console.log('logged')}),
-        map((response: APIFibonacciHistoryResponse) => response.history)));
+        map((response: APIFibonacciHistoryResponse) => response.history))),
+      retry(), // retry on failure
+      share(),
+      takeUntil(this._polling)// share this between all subscribers
+  );
+
+    // based on https://blog.angulartraining.com/how-to-do-polling-with-rxjs-and-angular-50d635574965
   }
-
-
-  //     let ReturnValue = of(this.stubResponse);
-  //     setInterval(()=>{
-  //
-  //         console.log(this.stubResponse);
-  //         ReturnValue.next();
-  //
-  //     }, 2000);
-  //
 }
