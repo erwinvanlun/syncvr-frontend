@@ -1,6 +1,6 @@
 <section class="get-number">
   <h2>{{'fibonacci.number'| translate}}</h2>
-  <form (submit)="handleGetResult(); $event.preventDefault()">
+  <form (submit)="handleCalcFibonacci(); $event.preventDefault()">
     <sv-text-input
       [formGroupObj]="fibonacciForm"
       [options] = "options"
@@ -45,7 +45,8 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+        [ngStyle]="{'background-color': row.myRequest === true ? 'green' : 'red'}"></tr>
   </table>
 
   <div >
