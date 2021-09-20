@@ -8,18 +8,6 @@
     "for": "voor"
   },
 
-  "fibonacci": {
-    "title": "De Magische Fibonnaci Nummer Generator",
-    "number": "nummer",
-    "getNumber": "verzoek nu",
-    "result": "resultaat",
-    "history": "Eerdere verzoeken",
-    "time": "tijdstip",
-    "requestId": "#",
-    "ipAddress": "ip-adres",
-    "older": "ouder"
-  },
-
   "languages": {
     "Dutch": {
       "full": "Nederlands",
@@ -31,6 +19,32 @@
       "short": "EN",
       "locale": "us-en"
     }
+  },
+
+  "time": {
+    "justnow": "nu",
+    "secondAgo": "seconde geleden",
+    "secondsAgo": "seconden geleden",
+    "minuteAgo": "minuut geleden",
+    "minutesAgo": "minuten geleden",
+    "hourAgo": "uur geleden",
+    "hoursAgo": "uur geleden",
+    "monthAgo": "maand geleden",
+    "monthsAgo": "maanden geleden",
+    "yearAgo": "jaar geleden",
+    "yearsAgo": "jaar geleden"
+  },
+
+  "fibonacci": {
+    "title": "De Magische Fibonnaci Nummer Generator",
+    "number": "nummer",
+    "getNumber": "verzoek nu",
+    "result": "resultaat",
+    "history": "Eerdere verzoeken",
+    "time": "tijdstip",
+    "requestId": "#",
+    "ipAddress": "ip-adres",
+    "older": "ouder"
   }
 }
 

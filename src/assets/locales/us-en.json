@@ -8,18 +8,6 @@
     "for": "for"
   },
 
-  "fibonacci": {
-    "title": "Magic Fibonnaci Mumber Generator",
-    "number": "number",
-    "getNumber": "get it!",
-    "result": "result",
-    "history": "Previous results",
-    "time": "time",
-    "requestId": "#",
-    "ipAddress": "ip address",
-    "older": "older"
-  },
-
   "languages": {
     "Dutch": {
       "full": "Nederlands",
@@ -31,6 +19,32 @@
       "short": "EN",
       "locale": "us-en"
     }
+  },
+
+  "time": {
+    "justnow": "just now",
+    "secondAgo": "second ago",
+    "secondsAgo": "seconds ago",
+    "minuteAgo": "minute ago",
+    "minutesAgo": "minutes ago",
+    "hourAgo": "hour ago",
+    "hoursAgo": "hours ago",
+    "monthAgo": "month ago",
+    "monthsAgo": "months ago",
+    "yearAgo": "year ago",
+    "yearsAgo": "years ago"
+  },
+
+  "fibonacci": {
+    "title": "Magic Fibonnaci Mumber Generator",
+    "number": "number",
+    "getNumber": "get it!",
+    "result": "result",
+    "history": "Previous results",
+    "time": "time",
+    "requestId": "#",
+    "ipAddress": "ip address",
+    "older": "older"
   }
 }
 
