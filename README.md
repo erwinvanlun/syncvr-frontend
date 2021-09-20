@@ -1,19 +1,26 @@
 # Coding demonstration by Erwin van Lun
 
-# to run, 
-1. download and run backend repo: https://github.com/erwinvanlun/syncvr-backend.git
-2. >ng serve
+# Install and run
+to install:
+>npm install
+
+to prepare backend
+download and run backend repo: https://github.com/erwinvanlun/syncvr-backend.git
+your API will be available at the endpoint localhost:3000
+
+to run:
+> ng serve
    
 ## Features
 - calculate Fibonacci number
-- show history of early request from server
+- show history of previous requests from server
 - recognize and highlight own requests
 - multi-lingual 
 - lazy loading
 - shared SyncVR library with backend (available on https://www.npmjs.com/package/syncvr)
 - typescript strict mode
 
-## Suggested features 
+## Planned features 
 - error handling (basic handling already in code)
 - integrate validation with backend
 
