@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {SvControlOptions} from "@lib/forms/controls/control-options.interface";
 import {FibonacciService, ServiceFibonacciHistory} from "@fibonacci/fibonacci.service";
 import { Subscription} from "rxjs";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'sv-fibonacci',
@@ -13,7 +14,7 @@ export class FibonacciComponent implements OnInit, OnDestroy {
 
   options: SvControlOptions = {
     dataCy: "",
-    label: "base number",
+    label: "",
     name: "number"
   }
 
@@ -24,9 +25,12 @@ export class FibonacciComponent implements OnInit, OnDestroy {
 
   displayedColumns: string[] = ['requestId', 'number', 'fibonacci', 'timestamp', 'ipAddress'];
 
-  constructor(private fibonacciService: FibonacciService) { }
+  constructor(private fibonacciService: FibonacciService, private translateService: TranslateService) { }
 
   ngOnInit() {
+
+    this.options.label = this.translateService.instant('fibonacci.number');
+
     this.historySubscription = this.fibonacciService
       .getHistory$()
       .subscribe(

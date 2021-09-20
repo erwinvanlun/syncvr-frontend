@@ -27,6 +27,11 @@
       left: 0;
       bottom: 100%;
     }
+
+    & p.clickable {
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
 
   header { // todo could be optimized with footer in mixin

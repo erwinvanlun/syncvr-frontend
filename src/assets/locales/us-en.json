@@ -1,11 +1,12 @@
 {
   "root": {
-    "title": "Demo for SyncVR",
+    "title": "Coding demonstration for SyncVR",
     "companyName" : "Sync VR",
     "applicationName": "Fibonacci Generator",
     "author": "Erwin van Lun",
     "madeBy": "mady by",
-    "for": "for"
+    "for": "for",
+    "inThisLanguage": "in English"
   },
 
   "languages": {
@@ -36,11 +37,11 @@
   },
 
   "fibonacci": {
-    "title": "Magic Fibonnaci Mumber Generator",
+    "title": "Calculate your Fibonnaci",
     "number": "number",
-    "getNumber": "get it!",
+    "getNumber": "calculate!",
     "result": "result",
-    "history": "Previous results",
+    "history": "Previous calculations",
     "time": "time",
     "requestId": "#",
     "ipAddress": "ip address",

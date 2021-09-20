@@ -1,18 +1,25 @@
 <section class="get-number">
-  <h2>{{'fibonacci.number'| translate}}</h2>
+  <h2>{{'fibonacci.title'| translate}}</h2>
   <form (submit)="handleCalcFibonacci(); $event.preventDefault()">
-    <sv-text-input
-      [formGroupObj]="fibonacciForm"
-      [options] = "options"
-    >
-    </sv-text-input>
-    <div class="action-buttons">
-      <button class="submit">
-        {{'fibonacci.getNumber'| translate}}
-      </button>
+    <div class="calculate-number">
+      <div class="label">n:</div>
+      <sv-text-input
+        [formGroupObj]="fibonacciForm"
+        [options]="options"
+      >
+      </sv-text-input>
+      <div class="action-buttons">
+        <button class="submit">
+<!--        [ngClass]="{'disabled':!fibonacciForm.valid} need to be improved-->
+          {{'fibonacci.getNumber'| translate}}
+        </button>
+      </div>
     </div>
-    Result: {{result}}
   </form>
+  <div class="result-row">
+    <div class="label">F<sub>n</sub>:</div>
+    <div class="result" >{{result}}</div>
+  </div>
 </section>
 <section class="history">
   <h2>{{'fibonacci.history'| translate}}</h2>
@@ -26,7 +33,8 @@
 
     <ng-container matColumnDef="timestamp">
       <th mat-header-cell *matHeaderCellDef>{{'fibonacci.time' | translate }}</th>
-      <td mat-cell *matCellDef="let element">{{element.timestamp | relativeTimeNum }} {{element.timestamp | relativeTimeText | translate}}</td>
+      <td mat-cell
+          *matCellDef="let element">{{element.timestamp | relativeTimeNum }} {{element.timestamp | relativeTimeText | translate}}</td>
     </ng-container>
 
     <ng-container matColumnDef="ipAddress">
@@ -46,10 +54,11 @@
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"
-        [ngStyle]="{'background-color': row.myRequest === true ? 'green' : 'red'}"></tr>
+      [ngClass]="{'my-request':row.myRequest === true}">
+    </tr>
   </table>
 
-  <div >
-    <button >{{'fibonacci.older'| translate}}</button>
-  </div>
+<!--  <div>-->
+<!--    <button>{{'fibonacci.older'| translate}}</button>-->
+<!--  </div>-->
 </section>

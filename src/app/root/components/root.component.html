@@ -6,9 +6,8 @@
   <router-outlet></router-outlet>
 
   <footer>
-    <p>{{'root.madeBy' | translate}} {{'root.author' | translate}}
-      {{'root.for' | translate}} {{'root.companyName' | translate}}</p>
-    <p (click)="toggleLanguage()">{{'root.for' | translate}} </p>
+    <p>{{'root.madeBy' | translate}} {{'root.author' | translate}}</p>
+    <p (click)="toggleLanguage()" class="clickable">{{'root.inThisLanguage' | translate}} </p>
   </footer>
 
 </div>

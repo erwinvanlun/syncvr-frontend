@@ -8,7 +8,6 @@ section {
   background: $fibonacci-background;
   border: .15em solid $fibonacci-borders;
   border-radius: 1rem;
-  color: white;
 
   filter: drop-shadow(0 0 30px white);
 
@@ -17,13 +16,81 @@ section {
     text-shadow: .2rem .2rem .8rem $fibonacci-font-shadow;
   }
 
+  &.get-number {
+    .label {
+      width: 2.5rem;
+      padding-top: .5rem;
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    form {
+      width: 100%;
+      display: flex;
+      justify-content: stretch;
+
+      & .calculate-number {
+        display: flex;
+      }
+
+      button {
+        background-color: $root-header-footer;
+        border: none;
+        cursor: pointer;
+        color: $root-headers;
+        padding: 1.6rem 3.2rem;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1.6rem;
+        margin: .4rem 1rem 0 1rem; // fix for demo
+        border-radius: .3rem;
+
+        &.disabled {
+          background: lightgrey;
+          color: grey;
+        }
+      }
+    }
+
+    .result-row {
+      width: 100%;
+      display: flex;
+
+      & .result {
+        border: 1px solid black;
+        width: calc(100% - 2.5rem);
+        height: 4rem;
+        padding: .5rem;
+        border-radius: .3em;
+
+        &:not(.something) {
+          opacity: .5; // not working, for error handling
+        }
+      }
+    }
+  }
+
   table {
     .mat-row {
       height: auto;
-    }
+      &.my-request {
+        background-color: green; //quick
+      }
 
-    .mat-cell {
-      padding: .6rem .6rem .6rem 0;
+      .mat-cell {
+        padding: .6rem .6rem .6rem .6rem;
+        &:first-of-type, .last-of-type {
+          padding-left: 1rem;
+        }
+      }
     }
   }
+
+th.mat-header-cell {
+  margin-left: 1rem;
+  &:first-of-type {
+    padding-left: 1rem; // material design suggests 24px, why?
+  }
+}
 }

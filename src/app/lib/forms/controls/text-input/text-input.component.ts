@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, ValidatorFn, Validators} from "@angular/forms";
 import {SvControlOptions} from "../control-options.interface";
 
 @Component({
@@ -27,7 +27,9 @@ export class TextInputComponent  implements OnInit {
     this.formGroupObj.addControl(
       this.options.name,
       new FormControl(
-        this.options.value ? {value:  this.options.value, disabled: false} : null
+        this.options.value ? {value:  this.options.value, disabled: false} : null,
+        [Validators.required, Validators.min(0)],
+        // really a quick hack for demo. Should be passed higher level, and combined with backend code
       )
     );
     this.control = this.formGroupObj.controls[this.options.name] as FormControl;
