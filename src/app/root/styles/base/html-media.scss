@@ -36,7 +36,10 @@ html {
 html {
   box-sizing: border-box;
 }
-body {
-  background-color: $color-app-background;
-}
 
+body {
+  //background: url( '/assets/fibonacciFractal.jpeg') no-repeat center center fixed;
+  background: url('/assets/fibonacciFractal.jpeg') no-repeat center center fixed;
+  background-width: 100%;
+  background-size: cover;
+}
