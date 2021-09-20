@@ -1,17 +1,46 @@
+@import 'variables';
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
 
   header, footer {
-    background: red;
     width: 100%;
-    padding: .5em;
+    background-color: rgba($root-header-footer, .8);
+    color: $root-headers;
+    * {
+      text-align: center;
+    }
   };
 
   footer {
+
     position: fixed;
-    height: 3rem;
     bottom: 0;
+    padding: .2rem 1rem .2rem 1rem;
+
+    &:before {
+      height: 100%;
+      width: 100%;
+      background-image: linear-gradient(to bottom, rgba($root-header-footer, 0), rgba($root-header-footer, .8));
+      left: 0;
+      bottom: 100%;
+    }
+  }
+
+  header { // todo could be optimized with footer in mixin
+    padding: 1rem;
+
+    h1 {
+      margin: 0; // todo should have been fixed in reset
+    }
+    &:after {
+      height: 1rem;
+      width: 100%;
+      background-image: linear-gradient(to bottom, rgba($root-header-footer, .9), rgba($root-header-footer, 0));
+      left: 0;
+      transform: translateY(100%);
+    }
   }
 }

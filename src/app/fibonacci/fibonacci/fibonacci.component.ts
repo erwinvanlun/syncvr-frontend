@@ -66,5 +66,4 @@ export class FibonacciComponent implements OnInit, OnDestroy {
         },
       );
   }
-
 }
