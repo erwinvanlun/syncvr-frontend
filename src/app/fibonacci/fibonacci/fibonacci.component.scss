@@ -3,4 +3,14 @@ section{
   background: grey;
 
   margin-bottom: 50px;
+
+  table {
+    .mat-row {
+      height: auto;
+    }
+
+    .mat-cell {
+      padding: .6rem .6rem .6rem 0;
+    }
+  }
 }

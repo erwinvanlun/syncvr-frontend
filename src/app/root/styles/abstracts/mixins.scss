@@ -1,0 +1,30 @@
+/*
+0 - 600 px: Phone
+600-900 px: Tablet portrait
+900-1200 px: Tablet landscape
+1200-1800 px: normal styles apply
+1800 px+: big desktops
+
+break point             | pixels  | ems (=px/16)
+phone                   | 600     | 37.5
+tablet                  | 800     | 50
+laptop                  | 900     | 56.25
+desktop                 | 1500    | 73.75
+large-desktoo            | 20000   | 125
+ */
+
+@mixin respond($breakpoint, $inverse: false) {
+  $breakpoints: phone tablet laptop desktop large-desktop;
+  $values: 37.5em 50em 56.3em 73.8em 125em;
+  $width: nth($values, index($breakpoints, $breakpoint));
+
+  @if not($inverse) {
+    @media (max-width: $width) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $width + 0.01) {
+      @content;
+    }
+  }
+}

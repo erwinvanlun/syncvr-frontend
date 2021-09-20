@@ -1,0 +1,42 @@
+@import 'variables.scss';
+
+html {
+  /* default font size of browsers is 16 px. */
+  font-size: 62.5%;
+  /* default font size of browsers is 16 px. This means that wherever we use rem
+ 1.0rem = 10px
+ 1.4rem = 14px
+ 1.8rem = 28px
+ 2.2rem = 22px
+ now we've set this, we should actually only make use of rem from now on! */
+
+  --dev-profile: "extreme";
+
+  @include respond(large-desktop, true) {
+    --dev-profile: "large desktop";
+    font-size: 85%;
+  }
+  @include respond(desktop) {
+    --dev-profile: "desktop";
+  }
+  @include respond(laptop) {
+    font-size: 55%;
+    --dev-profile: "laptop";
+  }
+  @include respond(tablet) {
+    font-size: 50%;
+    --dev-profile: "tablet";
+  }
+  @include respond(phone) {
+    font-size: 45%;
+    --dev-profile: "phone";
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+body {
+  background-color: $color-app-background;
+}
+

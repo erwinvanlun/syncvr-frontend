@@ -32,9 +32,18 @@
 							"src/favicon.ico",
 							"src/assets"
 						],
-						"styles": [
-							"src/styles/styles.scss"
-						],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/app/root/styles/",
+                "src/app/root/styles/abstracts/",
+                "src/app/root/styles/base/",
+                "src/app/root/styles/devices/",
+                "src/app/root/styles/layout/"
+              ]
+            },
+            "styles": [
+              "src/app/root/styles/styles.scss"
+            ],
 						"scripts": []
 					},
 					"configurations": {
