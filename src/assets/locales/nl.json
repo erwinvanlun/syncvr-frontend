@@ -30,6 +30,8 @@
     "minutesAgo": "minuten geleden",
     "hourAgo": "uur geleden",
     "hoursAgo": "uur geleden",
+    "dagAgo": "dag geleden",
+    "daysAgo": "dagen geleden",
     "monthAgo": "maand geleden",
     "monthsAgo": "maanden geleden",
     "yearAgo": "jaar geleden",
