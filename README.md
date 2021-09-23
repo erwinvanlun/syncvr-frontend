@@ -36,7 +36,3 @@ to run:
 - check scss for possible optimizations
 - ts lint check, align with backend code style
 - todo's documented in code
-
-## Know bugs
-- initial history doesn't show request in date order, probably caused in relativeDate pipe
-- 
