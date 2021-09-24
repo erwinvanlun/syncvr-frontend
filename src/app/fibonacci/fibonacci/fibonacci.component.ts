@@ -32,7 +32,7 @@ export class FibonacciComponent implements OnInit, OnDestroy {
     this.options.label = this.translateService.instant('fibonacci.number');
 
     this.historySubscription = this.fibonacciService
-      .getHistory$()
+      .loadHistory$()
       .subscribe(
         (h) => {
           this.history = h;
@@ -54,10 +54,10 @@ export class FibonacciComponent implements OnInit, OnDestroy {
       Validators.pattern(/^-?(0|[1-9]\d*)?$/)
     ])});
 
-  handleCalcFibonacci() {
+  calcFibonacci() {
     const value = this.fibonacciForm.value;
     this.fibonacciService
-      .getFibonacci$(value.number)
+      .loadFibonacci$(value.number)
       .subscribe(
         (r) => {
           this.result = r.toString();

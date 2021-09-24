@@ -1,6 +1,6 @@
 <section class="get-number">
   <h2>{{'fibonacci.title'| translate}}</h2>
-  <form (submit)="handleCalcFibonacci(); $event.preventDefault()">
+  <form (submit)="calcFibonacci(); $event.preventDefault()">
     <div class="calculate-number">
       <div class="label">n:</div>
       <sv-text-input
@@ -54,7 +54,8 @@
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"
-      [ngClass]="{'my-request':row.myRequest === true}">
+      [ngClass]="{'my-request':row.myRequest === true, 'new':row.new === true}"
+       >
     </tr>
   </table>
 

@@ -6,5 +6,6 @@ export const environment: SvFEEnvironment = {
   defaultLanguage: LocalisationLanguages.English,
   availableLanguages: [LocalisationLanguages.English, LocalisationLanguages.Dutch],
   fibonacciApi: "localhost:3000",
+  maxRows: 20,
   historyRefreshInSeconds: 1
 };
