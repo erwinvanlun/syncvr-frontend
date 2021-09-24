@@ -72,7 +72,7 @@ export class FibonacciService {
               receivedHistory = response.history.map((hr) => ({
                 ...hr,
                 myRequest: this.myRequests.includes(hr.requestId),
-                new: hr.requestId > this.head
+                new: (hr.requestId > this.head) && (this.head !== 0)
               }));
 
               // merge received with current, filter for duplicates
